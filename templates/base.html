@@ -1,0 +1,31 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+    <head>
+<!-- w3css -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!-- angularjs -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-sanitize.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-resource.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
+<!-- style -->
+<link rel='stylesheet' href="{% static 'css/style.css' %}">
+<link rel="shortcut icon" type="image/png" href="{% static 'images/icon.png' %}"/>
+<title> cexamplz.com</title>
+{% block extra_head %}{% endblock extra_head %}
+    </head>
+    <body>
+    {#{% include "navbar.html" %}#}
+    <nav class='w3-bar w3-green w3-card-4'>
+        <a href="#" class="w3-bar-item w3-button w3-large">Home</a>
+    </nav>
+
+    <div class='w3-container'>
+        {% block content %}{% endblock content %}
+        {% block extra_script %}{% endblock extra_script %}
+    </div>
+    {% include "footer.html" %}
+    </body>
+</html>

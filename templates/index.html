@@ -1,0 +1,27 @@
+
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block extra_head %}
+    <link rel='stylesheet'  href="{% static 'css/postlist.css' %}">
+    <link rel='stylesheet'  href="{% static 'css/searchbox.css' %}">
+    <link rel='stylesheet' href="https://fonts.googleapis.com/css?family=Tangerine">
+    <style>
+        .w3-tangerine{
+            font-family: "Tangerine", serif;
+        }
+    </style>
+    <base href="/">
+{% endblock extra_head %}
+
+{% block content %}
+<div class='w3-margin' ng-app='postApp' >
+        <div class='w3-container w3-content w3-center' ng-view></div>
+</div>
+{% endblock content %}
+
+{% block extra_script %}
+    <script src="{% static 'js/api.js' %}" ></script>
+    <script src="{% static 'js/app.js' %}" ></script>
+{% endblock extra_script %}

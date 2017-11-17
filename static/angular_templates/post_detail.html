@@ -1,0 +1,21 @@
+    <div class='w3-container w3-left-align w3-card-4 w3-margin'>
+        <div class='w3-container'>
+        <p class='w3-large w3-quarter'><b>Topic:</b></p>
+        <p class='w3-large'>{{post.topic_name|uppercase}}</p>
+        </div>
+        <div class='w3-container'>
+        <p class='w3-large w3-quarter'><b>Title:</b></p>
+        <p class='w3-large'>{{post.title|capitalize}}</p>
+        </div>
+        <div class='w3-container'>
+        <p class='w3-large w3-quarter'><b>Difficulty:</b></p>
+        <p class='w3-large'>{{post.difficulty}} </p>
+        </div>
+        <div class='w3-container'>
+        <p class='w3-large w3-quarter'><b>Created on:</b></p>
+        <p class='w3-large'>{{post.timestamp}}</p>
+        </div>
+    </div>
+    <div class='w3-container w3-card '>
+             <div class='w3-code jsHigh notranslate w3-left-align w3-small' ng-bind-html="post.content"></div> 
+    </div>

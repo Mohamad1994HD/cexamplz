@@ -1,0 +1,33 @@
+ <div class='w3-container w3-center w3-margin'>
+            <div class='w3-wide w3-container w3-pale-green w3-card-4 w3-margin'>
+                <h2 class='w3-tangerine w3-xxxlarge'>Search through the largest C examples database</h2>
+            </div>
+            <p class='w3-border w3-card-4 w3-margin w3-padding'>
+            <input ng-model='search' type='text' class='w3-input w3-large' placeholder='Example: string manipulation' />
+            </p>
+</div>
+        <div class='w3-row w3-margin'>
+            <div class="panel panel-default list-group-panel">
+                    <ul class="w3-ul w3-card ">
+                        <li class="">
+                            <div class="w3-row w3-large">
+                                <div class="w3-quarter w3-left-align">Title</div>
+                                <div class="w3-quarter w3-left-align">Topic</div>
+                                <div class="w3-quarter">Posted since</div>
+                                <div class="w3-quarter">Difficulty</div>
+                            </div>
+                        </li>
+                    <ul class="w3-ul w3-card-4 list-group" style="">
+                        <li ng-repeat='post in posts|filter:search' class="">
+                            <div class="w3-row">
+                                <div class="w3-quarter w3-left-align" style=" "> <a class='' ng-href="problems/{{post.id}}">{{ post.title|limitTo:30 }}...</a> </div>
+                                <div class="w3-quarter w3-left-align" style="">{{post.topic_name}}</div>
+                                <div class="w3-quarter" style="">{{post.timestamp}}</div>
+                                <div class="w3-quarter" style="">{{post.difficulty}}</div>
+                            </div>
+                        </li>
+                    </ul>
+
+                <!-- <p ng-bind-html="post.content"></p> -->
+            </div>
+        </div>
