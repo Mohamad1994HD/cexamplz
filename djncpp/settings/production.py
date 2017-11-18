@@ -71,10 +71,10 @@ WSGI_APPLICATION = 'djncpp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'mohdhd1994$cexamplz',
-        'USER': 'mohdhd1994',
-        'PASSWORD': '1994ez1994#',
-        'HOST':'mohdhd1994.mysql.pythonanywhere-services.com',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST':os.environ.get('DB_HOST'),
     }
 }
 
