@@ -15,6 +15,16 @@
 <link rel="shortcut icon" type="image/png" href="{% static 'images/icon.png' %}"/>
 <title> cexamplz.com</title>
 {% block extra_head %}{% endblock extra_head %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109883305-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109883305-1');
+</script>
+
     </head>
     <body>
     {#{% include "navbar.html" %}#}
