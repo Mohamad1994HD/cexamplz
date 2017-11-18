@@ -4,12 +4,12 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
-try:
-    import secret_key
-except:
-    pass
+#try:
+#    import secret_key
+#except:
+#    pass
 
-SECRET_KEY = os.environ.get('SECRETY_KEY') or secret_key.SECRET_KEY
+SECRET_KEY = os.environ.get('SECRET_KEY') #or secret_key.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False 
@@ -49,7 +49,7 @@ ROOT_URLCONF = 'djncpp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates',],
+        'DIRS': [os.path.join(BASE_DIR,'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,15 +70,13 @@ WSGI_APPLICATION = 'djncpp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'mohdhd1994$cexamplz',
+        'USER': 'mohdhd1994',
+        'PASSWORD': '1994ez1994#',
+        'HOST':'mohdhd1994.mysql.pythonanywhere-services.com',
     }
 }
-
-# Update database configuration with $DATABASE_URL.
-import dj_database_url
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
 
 
 
