@@ -12,7 +12,11 @@ app = angular.module('postApp',['ngRoute', 'ngSanitize', 'api']).
                 otherwise({redirectTo:'/'});
             
             $locationProvider.html5Mode(true);
-        }]);
+        }]).directive('loading', function(){
+            return {
+                template:"<div class='fa fa-spinner w3-spin w3-xxlarge' ng-hide='posts.length'></div>"
+            };
+        });
 
 app.controller('listCtrl', ['$scope', 'Post', function($scope, Post){
     $scope.posts = Post.query(); 

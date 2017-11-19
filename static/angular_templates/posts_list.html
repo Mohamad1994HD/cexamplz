@@ -18,12 +18,17 @@
                             </div>
                         </li>
                     <ul class="w3-ul w3-card-4 list-group" style="">
+                        <loading></loading>
                         <li ng-repeat='post in posts|filter:search' class="">
                             <div class="w3-row">
                                 <div class="w3-quarter w3-left-align" style=" "> <a class='' ng-href="problems/{{post.id}}">{{ post.title|limitTo:30 }}...</a> </div>
                                 <div class="w3-quarter w3-left-align" style="">{{post.topic_name}}</div>
                                 <div class="w3-quarter" style="">{{post.timestamp}}</div>
-                                <div class="w3-quarter" style="">{{post.difficulty}}</div>
+                                <div class="w3-quarter" style="">
+                                    <div ng-class="{'w3-light-blue':post.difficulty==='Easy',
+                                                    'w3-light-green':post.difficulty==='Intermediate',
+                                                    'w3-dark-grey':post.difficulty==='Advanced'}">{{post.difficulty}}</div>
+                                </div>
                             </div>
                         </li>
                     </ul>
